@@ -36,8 +36,8 @@ class PlotView @JvmOverloads constructor(
         invalidate()
     }
 
-    override fun onDraw(canvas: Canvas?) {
-        lineDrawer.drawLineOn(canvas!!)
+    override fun onDraw(canvas: Canvas) {
+        lineDrawer.drawLineOn(canvas)
     }
 
 }
