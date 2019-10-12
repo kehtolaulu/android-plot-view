@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<!--    <declare-styleable name="PlotView"></declare-styleable>-->
+    <declare-styleable name="PlotView">
+        <attr name="plotColor" format="color"/>
+    </declare-styleable>
+
 </resources>

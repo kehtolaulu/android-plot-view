@@ -12,14 +12,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val sortedMap =
-            (1..20).asSequence()
-                .map { x -> x.toDouble() }
-                .associateWith { x -> randomY(x) }
-                .toSortedMap()
-        plot.drawPoints(sortedMap)
+        plot.drawPoints(xToY(x = 1..20, f = this::randomY))
     }
 
-    private fun randomY(x: Double) = randomGenerator.nextDouble() * (10 + x)
+    private fun xToY(x: IntRange, f: (Double) -> Double) =
+        x.map(Int::toDouble)
+            .associateWith(f)
+            .toSortedMap()
+
+    private fun randomY(x: Double) =
+        randomGenerator.nextDouble() * (10 + x)
 }

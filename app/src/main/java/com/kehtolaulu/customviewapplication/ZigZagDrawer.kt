@@ -1,24 +1,18 @@
 package com.kehtolaulu.customviewapplication
 
 import android.graphics.Canvas
-import android.graphics.Color
 import android.graphics.Paint
 import java.util.*
 
 private typealias Point = Pair<Double, Double>
 
-class ZigZagDrawer(private val points: SortedMap<Double, Double>) {
+class ZigZagDrawer(private val points: SortedMap<Double, Double>, private val paint: Paint) {
     private lateinit var canvas: Canvas
 
     private val minX = points.firstKey()
     private val maxX = points.lastKey()
     private val minY = points.values.min() ?: 100.0
     private val maxY = points.values.max() ?: 200.0
-
-    private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        style = Paint.Style.FILL
-        color = Color.RED
-    }
 
     fun drawLineOn(canvas: Canvas) {
         this.canvas = canvas
@@ -43,4 +37,3 @@ class ZigZagDrawer(private val points: SortedMap<Double, Double>) {
                 (10 + (y - minY) * canvas.height / (maxY - minY))
     }
 }
-
