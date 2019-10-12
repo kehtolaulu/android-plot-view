@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PlotView">
+        <attr name="plotWidth" format="integer" />
+        <attr name="plotHeight" format="integer" />
+    </declare-styleable>
+
+</resources>
