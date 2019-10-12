@@ -12,6 +12,9 @@ class PlotView @JvmOverloads constructor(
     attrs: AttributeSet,
     defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
+    init {
+        context.obtainStyledAttributes(attrs, R.styleable.PlotView).recycle()
+    }
     private lateinit var lineDrawer: ZigZagDrawer
     private val color = context
         .obtainStyledAttributes(attrs, R.styleable.PlotView)
