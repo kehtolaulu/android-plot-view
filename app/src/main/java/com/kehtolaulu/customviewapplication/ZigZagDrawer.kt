@@ -6,9 +6,12 @@ import java.util.*
 
 private typealias Point = Pair<Double, Double>
 
-class ZigZagDrawer(private val points: SortedMap<Double, Double>, private val paint: Paint) {
+class ZigZagDrawer(private val points: SortedMap<Double, Double>, private val color: Int) {
     private lateinit var canvas: Canvas
-
+    private val paint: Paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        style = Paint.Style.FILL
+        color = color
+    }
     private val minX = points.firstKey()
     private val maxX = points.lastKey()
     private val minY = points.values.min() ?: 100.0
