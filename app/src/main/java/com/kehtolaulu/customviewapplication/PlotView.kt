@@ -18,7 +18,6 @@ class PlotView @JvmOverloads constructor(
     private lateinit var lineDrawer: ZigZagDrawer
     private var points: SortedMap<Double, Double> = sortedMapOf()
 
-
     init {
         val a = TintTypedArray.obtainStyledAttributes(
             context,
